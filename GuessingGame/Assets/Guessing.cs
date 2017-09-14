@@ -1,29 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Guessing : MonoBehaviour
 {
+	public Text textbox;
 
 	int max = 500;
 	int min = 1; 
 	int guess;
-	public int counter = 6;
+	public int counter = 7;
 
 	// Use this for initialization
 	void Start ()
 	{
 		guess = Random.Range (min, max);
+
+		textbox.text = "Welcome to Nuber Guesser! " +
+			"\nPick a number in your head. Don't tell me what it is." +
+			"\nThe highest number you can pick is 500, the lowest number you can pick is 1" +
+			"\nIf I guess it in " +counter+ " guesses I win, if it takes me more you win." +
+			"\n\nIs the number higher or lower than " +guess+ "?" +
+			"\n\n Up Arrow for higher. Down Arrow for lower. Enter for I got it right.";
 		
-		print ("Welcome to Nuber Guesser!");
-		print ("Pick a number in your head. Don't tell me what it is.");
-
-		print ("The highest number you can pick is " +max +".");
-		print ("The lowest number you can pick is " +min +".");
-		print ("If I guess it in " +counter+ " guesses I win. If it takes me more you win.");
-
-		print ("Is the number higher or lower than " +guess +"?");
-		print ("Up arrow for higher. Down arrow for Lower. Enter for I got it right.");
 		max = max + 1;
 
 	}
@@ -35,7 +35,8 @@ public class Guessing : MonoBehaviour
 		{
 			min = guess;
 			guess = (max + min) / 2;
-			print ("Is the number higher or lower than " +guess +"?");
+			textbox.text = "Is the number higher or lower than " +guess +"?" +
+				"\n\n Up Arrow for higher. Down Arrow for lower. Enter for I got it right.";
 			counter--;
 		}
 
@@ -43,7 +44,8 @@ public class Guessing : MonoBehaviour
 		{
 			max = guess;
 			guess = (min + guess) / 2;
-			print ("Is the number higher or lower than " +guess +"?");
+			textbox.text = "Is the number higher or lower than " +guess +"?" +
+				"\n\n Up Arrow for higher. Down Arrow for lower. Enter for I got it right.";
 			counter--;
 		}
 
@@ -51,11 +53,11 @@ public class Guessing : MonoBehaviour
 		{
 			if (counter >= 0) 
 			{
-				print ("I win! Thanks for playing!");
+				textbox.text = "I win! Thanks for playing!";
 			}
 			if (counter < 0) 
 			{
-				print ("You win! Good Job!");
+				textbox.text = "You win! Good Job!";
 			}
 		}
 
