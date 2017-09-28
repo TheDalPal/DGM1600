@@ -10,7 +10,7 @@ public class UltimateScript : MonoBehaviour
 
 	public enum State
 	{
-		start, forest, river, mountain, beach, treetops, deepwoods, house, calmwaters, waterfall, planes, cave, right, left, center, forward, island, city, gameover, victory
+		start, forest, river, mountain, beach, treetops, deepwoods, house, calmwaters, waterfall, planes, cave, right, left, center, forward, theend, island, city, gameover, victory
 	};
 	public State myState;
 
@@ -63,7 +63,9 @@ public class UltimateScript : MonoBehaviour
 			State_Center (); 
 		} else if (myState == State.forward) {
 			State_Forward (); 
-		} else if (myState == State.planes) {
+		} else if (myState == State.theend) {
+			State_TheEnd (); 
+		}  else if (myState == State.planes) {
 			State_Planes ();
 		} else if (myState == State.beach) {
 			State_Beach ();
@@ -368,10 +370,26 @@ public class UltimateScript : MonoBehaviour
 	void State_Forward()
 	{
 		textbox.text = "You continue to walk down the tunnel until you reach the heart of the Mountain." +
-			"\n When the tunnel ends you find a huge cavern with a lake of lava." +
-			"\n Upon further investigation you find that this cavern has been set up as an evil lair. However it hasn't been used in years." +
-			"\n The evil scientists were trying to harness the power of the volcano to create a death ray." +
-			"\n There is a big red button that says Do Not Pu
+		"\n When the tunnel ends you find a huge cavern with a lake of lava." +
+		"\n Upon further investigation you find that this cavern has been set up as an evil lair. However it hasn't been used in years." +
+		"\n The evil scientists were trying to harness the power of the volcano to create a death ray." +
+		"\n There is a big red button that says Do Not Push" +
+		"\n Press P to Give into the urge to Push the button.";
+
+		if (Input.GetKeyDown (KeyCode.P)) {
+			myState = State.theend;
+		}
+	}
+
+	void State_TheEnd()
+	{
+		textbox.text = "The Death Ray shoots a beam at the moon that blows it up." +
+		"\n The beam was noticed by everyone around the world and people swarm to see what happened." +
+		"\n Your able to escape now that people know you are stranded, but the moon is gone. Oh Well." +
+		"\n Press Return to escape the island.";
+		if (Input.GetKeyDown (KeyCode.Return)) {
+			myState = State.victory;
+		}
 	}
 
 	void State_Planes ()
