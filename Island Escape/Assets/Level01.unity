@@ -231,6 +231,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textbox: {fileID: 433619927}
   myState: 0
+  oars: 0
+  rope: 0
+  wood: 0
+  matches: 0
+  lantern: 0
+  flare: 0
+  shovel: 0
+  ax: 0
+  coal: 0
+  ammo: 0
+  shotgun: 0
 --- !u!4 &219029446
 Transform:
   m_ObjectHideFlags: 0

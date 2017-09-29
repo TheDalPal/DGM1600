@@ -267,24 +267,11 @@ public class UltimateScript : MonoBehaviour
 	}
 
 	void State_Cave()
-	{if (coal == true) {
-			textbox.text = "You used the matches to light the lantern and now you can venture into the cave." +
-				"\n Would you like to go Left, Right, or Center?" +
-				"\n L for Left, R for Right, or C for Center, You can also return to the Mountain";
-			if(Input.GetKeyDown (KeyCode.R)) 
-			{myState = State.right;}
-			else if(Input.GetKeyDown (KeyCode.L)) 
-			{myState = State.left;}
-			else if(Input.GetKeyDown (KeyCode.C)) 
-			{myState = State.center;}
-			else if (Input.GetKeyDown (KeyCode.M)) 
-			{myState = State.mountain;}
-		}
-		else if (lantern && matches == true)
+	{if (lantern && matches == true)
 		{
 			textbox.text = "You used the matches to light the lantern and now you can venture into the cave." +
 				"\n You find that the cave is an old Coal mine." +
-				"\n Press A to Add the Coal to your Inventory." +
+				"\n The coal was added into your inventory." +
 				"\n Would you like to go Left, Right, or Center?" +
 				"\n L for Left, R for Right, or C for Center, You can also return to the Mountain";
 		
@@ -296,8 +283,7 @@ public class UltimateScript : MonoBehaviour
 			{myState = State.center;}
 			else if (Input.GetKeyDown (KeyCode.M)) 
 			{myState = State.mountain;}
-			else if (Input.GetKeyDown (KeyCode.A)) 
-			{coal = true;}
+			coal = true;
 		}
 
 	else {
@@ -312,10 +298,10 @@ public class UltimateScript : MonoBehaviour
 	void State_Left()
 	{if (flare == true) {
 			textbox.text = "You are in a small empty cavern." +
-			"\n Press M to return to the Mountain";
-			if (Input.GetKeyDown (KeyCode.M)) {
-				myState = State.mountain;
-			} 
+			"\n Press C to return to the Cave.";
+		if (Input.GetKeyDown (KeyCode.C)) 
+				{myState = State.cave;}
+
 		} else {
 			textbox.text = "You walk into a small cavern and find a Flare lying on the floor." +
 			"\n Press A to Add the Flare to your inventory." +
@@ -323,30 +309,30 @@ public class UltimateScript : MonoBehaviour
 
 			if (Input.GetKeyDown (KeyCode.A)) {
 				flare = true;
-			} else if (Input.GetKeyDown (KeyCode.M)) {
-				myState = State.mountain;
+		} else if (Input.GetKeyDown (KeyCode.C)) 
+		{myState = State.cave;}
 			} 
 		}
-	}
+	
 
 	void State_Right()
 	{
 		if (rope == true) {
 			textbox.text = "You are in a small empty cavern." +
-			"\n Press M to return to the Mountain";
-			if (Input.GetKeyDown (KeyCode.M)) {
-				myState = State.mountain;
-			} else {
+				"\n Press C to return to the Cave.";
+			if (Input.GetKeyDown (KeyCode.C)) 
+			{myState = State.cave;}
+		}else {
 				textbox.text = "You walk into a small cavern and lying on the floor is a coil of Rope." +
 				"\n Press A to Add the rope to your Inventory." +
 				"\n Press M to Escape the Cave and return to the Mountain.";
-				if (Input.GetKeyDown (KeyCode.M)) {
-					myState = State.mountain;}
+				if (Input.GetKeyDown (KeyCode.C)) 
+				{myState = State.cave;}
 				if (Input.GetKeyDown (KeyCode.A)) {
 					rope = true;}
 			}
 		}
-	}
+
 
 	void State_Center()
 	{if (shotgun && ammo == true) {
@@ -385,7 +371,7 @@ public class UltimateScript : MonoBehaviour
 	{
 		textbox.text = "The Death Ray shoots a beam at the moon that blows it up." +
 		"\n The beam was noticed by everyone around the world and people swarm to see what happened." +
-		"\n Your able to escape now that people know you are stranded, but the moon is gone. Oh Well." +
+		"\n You're able to escape now that people know you are stranded, but the moon is gone. Oh Well." +
 		"\n Press Return to escape the island.";
 		if (Input.GetKeyDown (KeyCode.Return)) {
 			myState = State.victory;
@@ -441,7 +427,7 @@ public class UltimateScript : MonoBehaviour
 	void State_Island()
 	{
 		if (shovel == true) {
-			textbox.text = "On the island you notice a big X under a palm tree. Using your shovel you dig at the . You find a treasure chest. " +
+			textbox.text = "On the island you notice a big X under a palm tree. Using your shovel you dig at the X. You find a treasure chest. " +
 				"\n Inside the chest is a Lantern an Ax, and some Shotgun ammo." +
 				"Press A to Add them to your Inventory.";
 		} 
