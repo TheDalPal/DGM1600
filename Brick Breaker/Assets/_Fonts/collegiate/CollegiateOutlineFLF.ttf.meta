@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 9951cc5c9e0a79048816e8af9ba0cfba
+timeCreated: 1507047765
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: CollegiateOutlineFLF
+  fontNames:
+  - CollegiateOutlineFLF
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
