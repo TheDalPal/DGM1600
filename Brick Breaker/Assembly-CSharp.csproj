@@ -51,7 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\Floor.cs" />
      <Compile Include="Assets\_Scripts\LevelManager.cs" />
+     <Compile Include="Assets\_Scripts\MusicManager.cs" />
      <None Include="Assets\_Fonts\arcadeclassic\pizzadudedotdk.txt" />
      <None Include="Assets\_Fonts\transformers_movie\Transformers font.txt" />
  <Reference Include="UnityEngine.UI">
