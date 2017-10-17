@@ -55,6 +55,7 @@
      <Compile Include="Assets\_Scripts\Floor.cs" />
      <Compile Include="Assets\_Scripts\LevelManager.cs" />
      <Compile Include="Assets\_Scripts\MusicManager.cs" />
+     <Compile Include="Assets\_Scripts\Paddle.cs" />
      <None Include="Assets\_Fonts\arcadeclassic\pizzadudedotdk.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
