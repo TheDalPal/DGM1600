@@ -14,8 +14,12 @@ public class Paddle : MonoBehaviour {
 	}
 
 	void Update() {
+		
+		//paddle follow mouse
 		Vector3 mousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		//override y possition
 		mousePos.y = paddleHeight;
+		//Override z depth
 		mousePos.z = 0;
 		paddleTrans.position = mousePos;
 	}
