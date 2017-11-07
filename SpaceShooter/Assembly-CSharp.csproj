@@ -51,7 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\Laser.cs" />
      <Compile Include="Assets\_Scripts\LevelManager.cs" />
+     <Compile Include="Assets\_Scripts\Meteor.cs" />
      <Compile Include="Assets\_Scripts\MusicManager.cs" />
      <Compile Include="Assets\_Scripts\PlayerController.cs" />
  <Reference Include="UnityEngine.UI">
