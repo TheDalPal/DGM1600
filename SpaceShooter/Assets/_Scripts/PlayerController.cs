@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 	public GameObject projectile;
 	public Transform shotPos;
 	float shotForce = 450;
+	public float fireRate = 0.7F;
+	private float nextFire = 0.0F;
 
 
 
@@ -43,14 +45,16 @@ public class PlayerController : MonoBehaviour {
 		float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
+
 		//laser fire
-		if(Input.GetButtonUp("Fire1"))
+		if (Input.GetButton("Fire1") && Time.time > nextFire) 
 		{
 			GameObject shot = Instantiate(projectile, shotPos.position, shotPos.rotation) as GameObject;
 			shot.GetComponent<Rigidbody2D> ().AddForce (shotPos.up * shotForce);
+
+			nextFire = Time.time + fireRate;
+
 		}
-
-
 
 	}
 }
