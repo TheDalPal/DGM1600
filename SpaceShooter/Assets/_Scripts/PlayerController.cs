@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 	float shotForce = 450;
 	public float fireRate = 0.7F;
 	private float nextFire = 0.0F;
+	public GameObject thrust;
+	public Transform thrustPos;
 
 
 
@@ -56,5 +58,11 @@ public class PlayerController : MonoBehaviour {
 
 		}
 
+		// thrust
+		if (Input.GetKey ("w"))
+		{
+			GameObject shot = Instantiate(thrust, thrustPos.position, thrustPos.rotation) as GameObject;
+		
+		}
 	}
 }

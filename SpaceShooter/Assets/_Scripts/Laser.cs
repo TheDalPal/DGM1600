@@ -8,7 +8,10 @@ public class Laser : MonoBehaviour {
 	float speed= 5;
 
 
+	void OnCollisionEnter2D (Collision2D Collider){
 
+		Destroy(this.gameObject);
+	}
 	void Update () {
 		lifetime -= Time.deltaTime;
 		if (lifetime <= 0) {
