@@ -10,36 +10,32 @@ public class PlayerController : MonoBehaviour {
 	float shotForce = 450;
 	public float fireRate = 0.7F;
 	private float nextFire = 0.0F;
-	public GameObject thrust;
-	public Transform thrustPos;
+
+	public float thrust;
+	public Rigidbody2D rb;
+
+	private Renderer[] renderers;
+	private bool isWrappingX = false;
+	private bool isWrappingY = false;
 
 
 
-	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
+		rb = GetComponent<Rigidbody2D>();
+
+		renderers = GetComponentsInChildren<Renderer> ();
 
 	}
 	
-	// Update is called once per frame
+
 	void FixedUpdate () {
 		//wasd movement
-		if (Input.GetKey ("w"))
-		{	transform.position += Vector3.up * speed * Time.deltaTime;
-			
-		}
-		if (Input.GetKey ("s"))
-		{   transform.position += Vector3.down * speed * Time.deltaTime;
-			
-		}
-		if (Input.GetKey ("a"))
+		if (Input.GetKey ("space"))
 		{
-			transform.position += Vector3.left * speed * Time.deltaTime;
+			rb.AddForce(transform.up * thrust);
 		}
-		if (Input.GetKey ("d"))
-		{
-			transform.position += Vector3.right * speed * Time.deltaTime;
 
-		}
 
 		//Rotate to mouse
 		Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
@@ -55,14 +51,67 @@ public class PlayerController : MonoBehaviour {
 			shot.GetComponent<Rigidbody2D> ().AddForce (shotPos.up * shotForce);
 
 			nextFire = Time.time + fireRate;
-
 		}
 
-		// thrust
-		if (Input.GetKey ("w"))
-		{
-			GameObject shot = Instantiate(thrust, thrustPos.position, thrustPos.rotation) as GameObject;
-		
-		}
+		ScreenWrap ();
 	}
+
+	void ScreenWrap()
+	{
+		bool isVisable = CheckRenderers();
+
+
+		isWrappingX = false;
+		isWrappingY = false;
+
+
+		if (isWrappingX && isWrappingY) 
+		{
+			return;
+		}
+
+		Vector3 newPosition = transform.position;
+
+		//Wrap Right to Left
+		if(newPosition.x > 7.3)
+		{
+			newPosition.x = -newPosition.x+1f;
+			isWrappingX = true;
+
+		}
+		//Warp Left to Right
+		if (newPosition.x < -7.3)
+		{
+			newPosition.x = 6.3f;
+		}
+
+		//Wrap Top to Bottom
+		if(newPosition.y > 5.6)
+		{
+			newPosition.y = -newPosition.y+1f;
+			isWrappingY = true;
+		}
+		//Warp Bottom to Top
+		if (newPosition.y < -5.6) 
+		{
+			newPosition.y = 4.6f;
+			isWrappingY = true;
+		}
+
+		transform.position = newPosition;
+	}
+
+	bool CheckRenderers()
+	{
+		foreach (Renderer r in renderers) 
+		{
+			if (r.isVisible) 
+			{
+				return true;
+			}
+
+		}
+		return false;
+	}
+
 }

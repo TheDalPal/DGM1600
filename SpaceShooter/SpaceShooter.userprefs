@@ -5,7 +5,7 @@
       <File FileName="Assets\_Scripts\Meteor.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Laser.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\MusicManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\PlayerController.cs" Line="64" Column="96" />
+      <File FileName="Assets\_Scripts\PlayerController.cs" Line="65" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
