@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	public float speed;
 	public GameObject projectile;
 	public Transform shotPos;
 	float shotForce = 450;
@@ -18,6 +17,8 @@ public class PlayerController : MonoBehaviour {
 	private bool isWrappingX = false;
 	private bool isWrappingY = false;
 
+	public float health;
+
 
 
 	void Start () 
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour {
 	
 
 	void FixedUpdate () {
-		//wasd movement
+		//thrust
 		if (Input.GetKey ("space"))
 		{
 			rb.AddForce(transform.up * thrust);
@@ -55,6 +56,18 @@ public class PlayerController : MonoBehaviour {
 
 		ScreenWrap ();
 	}
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		health--;
+		if (health <= 0) 
+		{
+			Debug.Log ("Game Over");
+		}
+	}
+
+
+
 
 	void ScreenWrap()
 	{

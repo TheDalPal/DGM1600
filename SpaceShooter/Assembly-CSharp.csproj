@@ -51,11 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\DestroyByTime.cs" />
+     <Compile Include="Assets\_Scripts\GameController.cs" />
      <Compile Include="Assets\_Scripts\Laser.cs" />
      <Compile Include="Assets\_Scripts\LevelManager.cs" />
      <Compile Include="Assets\_Scripts\Meteor.cs" />
      <Compile Include="Assets\_Scripts\MusicManager.cs" />
      <Compile Include="Assets\_Scripts\PlayerController.cs" />
+     <Compile Include="Assets\_Scripts\PowerUp.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
