@@ -400,7 +400,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d5ef44702c570c44ab81e0db2d6d68b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 645062f34ff42314fba491e508a33fb0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.40640888, g: 0.36797145, b: 0.6102941, a: 1}
+  m_Color: {r: 0.1397059, g: 1, b: 0.85760665, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -725,7 +725,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Space Shooter
+  m_Text: Asteroids
 --- !u!222 &766101009
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -8,8 +8,24 @@ public class PowerUp : MonoBehaviour {
 	public Type powerType;
 	public Sprite[] images;
 
+	public float timer1;
+	private float timerSave1;
+	bool t1s = false;
+	public float timer2;
+	private float timerSave2;
+	bool t2s = false;
+	public float timer3;
+	private float timerSave3;
+	bool t3s = false;
+
+
+
 	// Use this for initialization
 	void Start () {
+		timerSave1 = timer1;
+		timerSave2 = timer2;
+		timerSave3 = timer3;
+		
 		switch (powerType) {
 		case Type.healthup:
 			gameObject.GetComponent<SpriteRenderer> ().sprite = images[0];
@@ -29,7 +45,33 @@ public class PowerUp : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+		if (t1s == true) 
+		{
+			timer1 -= Time.deltaTime;
+			if (timer1 <= 0) 
+			{
+				timer1 = timerSave1;
+				t1s = false;
+			}
+		}
+		if (t2s == true) 
+		{
+			timer2 -= Time.deltaTime;
+			if (timer2 <= 0) 
+			{
+				timer2 = timerSave2;
+				t2s = false;
+			}
+		}
+		if (t3s == true) 
+		{
+			timer3 -= Time.deltaTime;
+			if (timer3 <= 0) 
+			{
+				timer3 = timerSave3;
+				t3s = false;
+			}
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -39,18 +81,23 @@ public class PowerUp : MonoBehaviour {
 		switch (powerType) 
 		{
 		case Type.healthup:
-			//other.GetComponent<PlayerController> ().health + 1;
-			Debug.Log ("HealthUp");
+			other.GetComponent<PlayerController> ().health++;
+			other.GetComponent<PlayerController> ().HeartDisplay();
 			break;
 		case Type.splitlaser:
 			//Tribolt shots
+			t1s = true;
 			break;
 		case Type.invincible:
-			//Disable health--
+			other.GetComponent<PlayerController> ().invincible = true;
+			t2s = true;
 			break;
 		case Type.gunspeedup:
-			//reload time is shorter
+			other.GetComponent<PlayerController> ().fireRate = .2f;
+			t3s = true;
 			break;		
 		}
 	}
+
+
 }

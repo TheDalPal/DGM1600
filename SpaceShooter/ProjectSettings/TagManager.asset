@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Laser
+  - Meteor
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - PowerUp
   - Player
   - Hazards
-  - 
-  - 
+  - Controller
+  - Laser
   - 
   - 
   - 

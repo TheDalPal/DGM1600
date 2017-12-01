@@ -102,6 +102,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: eb61fbcc06dff9645a24cb17dcb07be4, type: 3}
   - {fileID: 21300000, guid: 3b3c88165408dc44dbd177088e5b4c99, type: 3}
   - {fileID: 21300000, guid: fa7ec1fdb9f659044927e7c3ed251b53, type: 3}
+  timer1: 0
+  timer2: 0
+  timer3: 5
 --- !u!212 &212097620299990562
 SpriteRenderer:
   m_ObjectHideFlags: 1

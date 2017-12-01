@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114460951599101956}
   m_Layer: 10
   m_Name: Meteor
-  m_TagString: Untagged
+  m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,8 @@ MonoBehaviour:
   spin: 1
   score: 0
   explosion: {fileID: 1508245853219426, guid: 2c20479cb40182b4bb554c71e56140bc, type: 2}
+  thrust: 200
+  scoreValue: 10
 --- !u!114 &114460951599101956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb62309c1e1fff447a1f8f5744449210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 3
+  lifetime: 10
 --- !u!212 &212874191037239642
 SpriteRenderer:
   m_ObjectHideFlags: 1

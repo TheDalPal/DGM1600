@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject projectile;
 	public Transform shotPos;
 	float shotForce = 450;
-	public float fireRate = 0.7F;
+	public float fireRate;
 	private float nextFire = 0.0F;
 
 	public float thrust;
@@ -17,7 +17,12 @@ public class PlayerController : MonoBehaviour {
 	private bool isWrappingX = false;
 	private bool isWrappingY = false;
 
-	public float health;
+	public int health;
+	public GameObject explosion;
+	public GameObject[] hearts;
+
+	public bool invincible = false;
+
 
 
 
@@ -26,6 +31,8 @@ public class PlayerController : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 
 		renderers = GetComponentsInChildren<Renderer> ();
+
+		HeartDisplay ();
 
 	}
 	
@@ -59,10 +66,15 @@ public class PlayerController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		health--;
+		if (invincible == false) {
+			health--;
+		}
+
+		HeartDisplay ();
 		if (health <= 0) 
 		{
-			Debug.Log ("Game Over");
+			Destroy (this.gameObject);
+			Instantiate(explosion, transform.position, Quaternion.identity);
 		}
 	}
 
@@ -125,6 +137,19 @@ public class PlayerController : MonoBehaviour {
 
 		}
 		return false;
+	}
+
+	public void HeartDisplay()
+	{	//Turn Hearts off
+		for(int i = 0; i < hearts.Length; i++)
+		{
+			hearts[i].SetActive (false);
+		}
+		//Turn on current amount of health
+		for(int i = 0; i < health; i++)
+		{
+			hearts[i].SetActive (true);
+		}
 	}
 
 }

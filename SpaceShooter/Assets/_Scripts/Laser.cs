@@ -5,7 +5,7 @@ using UnityEngine;
 public class Laser : MonoBehaviour {
 
 	public float lifetime;
-	float speed= 5;
+	float speed = 5;
 
 	private Renderer[] renderers;
 	private bool isWrappingX = false;
