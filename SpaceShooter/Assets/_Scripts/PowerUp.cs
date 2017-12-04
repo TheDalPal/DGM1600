@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour {
 
-	public enum Type {healthup, splitlaser, invincible, gunspeedup};
+	public enum Type {healthup, doublepoints, invincible, gunspeedup};
 	public Type powerType;
 	public Sprite[] images;
 
@@ -30,7 +30,7 @@ public class PowerUp : MonoBehaviour {
 		case Type.healthup:
 			gameObject.GetComponent<SpriteRenderer> ().sprite = images[0];
 			break;
-		case Type.splitlaser:
+		case Type.doublepoints:
 			gameObject.GetComponent<SpriteRenderer> ().sprite = images [1];
 			break;
 		case Type.invincible:
@@ -84,8 +84,8 @@ public class PowerUp : MonoBehaviour {
 			other.GetComponent<PlayerController> ().health++;
 			other.GetComponent<PlayerController> ().HeartDisplay();
 			break;
-		case Type.splitlaser:
-			//Tribolt shots
+		case Type.doublepoints:
+			//points x2
 			t1s = true;
 			break;
 		case Type.invincible:

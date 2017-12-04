@@ -5,13 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-	public static int brickcount;
+
 
 	void Start(){
-		
+
 	}
-
-
 
 	public void LoadLevel(string lvl){
 		SceneManager.LoadScene (lvl);

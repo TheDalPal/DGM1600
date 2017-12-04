@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Meteor : MonoBehaviour {
 
 	public float spin;
@@ -13,15 +14,13 @@ public class Meteor : MonoBehaviour {
 	private Rigidbody2D rb;
 
 	public float thrust;
-	float randomRotate = 30;
+	float randomRotate = 25;
 
 	public int scoreValue;
 	GameController gameController;
 
-
 	void Start () 
-	{
-		rb = GetComponent<Rigidbody2D> (); 
+	{	rb = GetComponent<Rigidbody2D> (); 
 		//look at center 
 		transform.LookAt (Vector3.zero);
 		//Transform vector 3 to render 2D
@@ -36,11 +35,16 @@ public class Meteor : MonoBehaviour {
 		if (gameControllerObject != null)
 		{
 			gameController = gameControllerObject.GetComponent <GameController>();
+
 		}
 		if (gameController == null)
 		{
 			Debug.Log ("Cannot find 'GameController' script");
 		}
+	}
+	void Update()
+	{
+		StartCoroutine (IncreaseThrust ());
 	}
 
 	void OnCollisionEnter2D (Collision2D Collider)
@@ -49,5 +53,10 @@ public class Meteor : MonoBehaviour {
 		Instantiate(explosion, transform.position, Quaternion.identity);
 		gameController.AddScore (scoreValue);
 
+	}
+	IEnumerator IncreaseThrust()
+	{
+		yield return new WaitForSeconds (1);
+		thrust++;
 	}
 }

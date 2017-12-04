@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			Destroy (this.gameObject);
 			Instantiate(explosion, transform.position, Quaternion.identity);
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 		}
 	}
 
@@ -151,5 +153,4 @@ public class PlayerController : MonoBehaviour {
 			hearts[i].SetActive (true);
 		}
 	}
-
 }
