@@ -18,16 +18,22 @@ public class GameController : MonoBehaviour {
 
 	GameController gameController;
 
+	public GameObject powerUp;
+	public Vector3 powerupPos;
+	public float spawntimer;
+	public float spawntimersave;
 
 	void Start ()
 	{   
 		score = 0;
 		Score ();
 		StartCoroutine (SpawnWaves ());
+		spawntimersave = spawntimer;
 	}
 
 	void Update()
 	{
+		//increases difficulty over time
 		if (wavecount >= 5) {
 			spawnWait = .8f;
 		}
@@ -49,7 +55,20 @@ public class GameController : MonoBehaviour {
 		if (wavecount >= 70) {
 			spawnWait = .2f;
 		}
+		if (wavecount >= 100) {
+			spawnWait = .1f;
+		}
+		if (wavecount >= 150) {
+			spawnWait = .05f;
+		}
 
+		spawntimer -= Time.deltaTime;
+
+		// timer reaches 0 spawn the power up
+		if (spawntimer <= 0) {
+			SpawnPowerUp ();
+			spawntimer = spawntimersave;
+		}
 	}
 
 
@@ -114,5 +133,12 @@ public class GameController : MonoBehaviour {
 		Quaternion spawnRotation = Quaternion.identity;
 		Instantiate (hazard, spawnRight, spawnRotation);
 	}
-		
+
+	//Find random pos to spawn power up
+	void SpawnPowerUp()
+	{
+		Vector3 spawnPowerUp = new Vector3 (Random.Range (-powerupPos.x, powerupPos.x), Random.Range (-powerupPos.y, powerupPos.y), powerupPos.z);
+		Quaternion spawnRotation = Quaternion.identity;
+		Instantiate (powerUp, spawnPowerUp, spawnRotation);
+	}
 }

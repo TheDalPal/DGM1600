@@ -19,8 +19,13 @@ public class Meteor : MonoBehaviour {
 	public int scoreValue;
 	GameController gameController;
 
+	public AudioSource boom;
+
+
 	void Start () 
-	{	rb = GetComponent<Rigidbody2D> (); 
+	{	boom = GetComponent<AudioSource> ();
+		
+		rb = GetComponent<Rigidbody2D> (); 
 		//look at center 
 		transform.LookAt (Vector3.zero);
 		//Transform vector 3 to render 2D
@@ -41,6 +46,7 @@ public class Meteor : MonoBehaviour {
 		{
 			Debug.Log ("Cannot find 'GameController' script");
 		}
+			
 	}
 	void Update()
 	{
@@ -49,6 +55,7 @@ public class Meteor : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D Collider)
 	{
+		boom.Play ();
 		Destroy(this.gameObject);
 		Instantiate(explosion, transform.position, Quaternion.identity);
 		gameController.AddScore (scoreValue);

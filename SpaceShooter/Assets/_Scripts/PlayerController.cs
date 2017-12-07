@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 
 	public bool invincible = false;
 
-
+	public AudioSource pew;
 
 
 	void Start () 
@@ -35,10 +35,14 @@ public class PlayerController : MonoBehaviour {
 
 		HeartDisplay ();
 
+		pew = GetComponent<AudioSource> ();
 	}
 	
 
 	void FixedUpdate () {
+		if (fireRate < .2f) {
+			fireRate = .2f;
+		}
 		//thrust
 		if (Input.GetKey ("space"))
 		{
@@ -60,6 +64,8 @@ public class PlayerController : MonoBehaviour {
 			shot.GetComponent<Rigidbody2D> ().AddForce (shotPos.up * shotForce);
 
 			nextFire = Time.time + fireRate;
+
+			pew.Play ();
 		}
 
 		ScreenWrap ();

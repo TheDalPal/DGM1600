@@ -12,6 +12,7 @@ public class Laser : MonoBehaviour {
 	private bool isWrappingY = false;
 
 
+
 	void OnCollisionEnter2D (Collision2D Collider){
 
 		Destroy(this.gameObject);
