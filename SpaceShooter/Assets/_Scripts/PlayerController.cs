@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 	private float nextFire = 0.0F;
 
 	public float thrust;
-	public Rigidbody2D rb;
+	Rigidbody2D rb;
 
 	private Renderer[] renderers;
 	private bool isWrappingX = false;
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 
 	public bool invincible = false;
 
-	public AudioSource pew;
+	AudioSource pew;
 
 
 	void Start () 

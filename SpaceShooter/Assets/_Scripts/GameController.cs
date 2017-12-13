@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -13,7 +14,6 @@ public class GameController : MonoBehaviour {
 	public float wavecount;
 
 	public Text scoreText;
-	public Text gameoverText;
 	int score;
 
 	GameController gameController;
@@ -141,4 +141,5 @@ public class GameController : MonoBehaviour {
 		Quaternion spawnRotation = Quaternion.identity;
 		Instantiate (powerUp, spawnPowerUp, spawnRotation);
 	}
+		
 }

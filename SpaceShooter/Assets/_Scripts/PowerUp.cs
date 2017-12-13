@@ -21,7 +21,6 @@ public class PowerUp : MonoBehaviour {
 			gameObject.GetComponent<SpriteRenderer> ().sprite = images [1];
 			break;
 		}
-
 	}
 
 	// Update is called once per frame

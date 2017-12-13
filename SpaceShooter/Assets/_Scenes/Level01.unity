@@ -127,7 +127,7 @@ Prefab:
     - target: {fileID: 224810720686842634, guid: e1f8c8c62cf8b18439d2fcaae0612f40,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.733776
       objectReference: {fileID: 0}
     - target: {fileID: 224810720686842634, guid: e1f8c8c62cf8b18439d2fcaae0612f40,
         type: 2}
@@ -251,7 +251,7 @@ Prefab:
     - target: {fileID: 224810720686842634, guid: e1f8c8c62cf8b18439d2fcaae0612f40,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.00006866455
       objectReference: {fileID: 0}
     - target: {fileID: 224810720686842634, guid: e1f8c8c62cf8b18439d2fcaae0612f40,
         type: 2}
@@ -489,7 +489,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &674030720
 GameObject:
@@ -579,7 +579,7 @@ RectTransform:
   - {fileID: 510392217}
   - {fileID: 1728839522}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -668,7 +668,7 @@ Prefab:
     - target: {fileID: 224810720686842634, guid: e1f8c8c62cf8b18439d2fcaae0612f40,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.00006866455
       objectReference: {fileID: 0}
     - target: {fileID: 224810720686842634, guid: e1f8c8c62cf8b18439d2fcaae0612f40,
         type: 2}
@@ -787,7 +787,7 @@ Prefab:
     - target: {fileID: 224810720686842634, guid: e1f8c8c62cf8b18439d2fcaae0612f40,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.733776
       objectReference: {fileID: 0}
     - target: {fileID: 224810720686842634, guid: e1f8c8c62cf8b18439d2fcaae0612f40,
         type: 2}
@@ -920,13 +920,10 @@ MonoBehaviour:
   startWait: 0
   wavecount: 0
   scoreText: {fileID: 510392218}
-  gameoverText: {fileID: 0}
   powerUp: {fileID: 1506871987664646, guid: 26bd7f593b81f2b49892690ce4386786, type: 2}
   powerupPos: {x: 5.5, y: 4.5, z: 0}
   spawntimer: 10
   spawntimersave: 0
-  removetimer: 5
-  removetimersave: 0
 --- !u!4 &1133842687
 Transform:
   m_ObjectHideFlags: 0
@@ -1071,7 +1068,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1568080650
+  randomSeed: -341996716
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4356,7 +4353,7 @@ Prefab:
     - target: {fileID: 224810720686842634, guid: e1f8c8c62cf8b18439d2fcaae0612f40,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.733776
       objectReference: {fileID: 0}
     - target: {fileID: 224810720686842634, guid: e1f8c8c62cf8b18439d2fcaae0612f40,
         type: 2}
@@ -4737,7 +4734,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -912766502
+  randomSeed: 366143576
   InitialModule:
     serializedVersion: 3
     enabled: 1
