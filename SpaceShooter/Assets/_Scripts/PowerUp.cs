@@ -36,6 +36,7 @@ public class PowerUp : MonoBehaviour {
 
 		switch (powerType) 
 		{
+		// make function increase fire rate and call that on collision.
 		case Type.healthup:
 			other.GetComponent<PlayerController> ().health++;
 			other.GetComponent<PlayerController> ().HeartDisplay();

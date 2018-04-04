@@ -83,8 +83,6 @@ MonoBehaviour:
   images:
   - {fileID: 21300000, guid: 79e7499a37ffdce44bfbcd8a42663b3a, type: 3}
   - {fileID: 21300000, guid: fa7ec1fdb9f659044927e7c3ed251b53, type: 3}
-  xrange: 5
-  yrange: 5
 --- !u!114 &114862049163683124
 MonoBehaviour:
   m_ObjectHideFlags: 1
