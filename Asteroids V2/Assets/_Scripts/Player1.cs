@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player1 : MonoBehaviour {
 
 	public float thrust;
-	Rigidbody2D rb;
+	Rigidbody2D rbp1;
 
 	private Renderer[] renderers;
 	private bool isWrappingX = false;
@@ -13,16 +13,20 @@ public class Player1 : MonoBehaviour {
 
 	public GameObject projectile;
 	public Transform shotPos;
-	float shotForce = 450;
+	public float shotForce = 450;
 	public float fireRate;
 	private float nextFire = 0.0F;
+
+	AudioSource pew;
 
 	// Use this for initialization
 	void Start () {
 		
-		rb = GetComponent<Rigidbody2D>();
+		rbp1 = GetComponent<Rigidbody2D>();
 
 		renderers = GetComponentsInChildren<Renderer> ();
+
+		pew = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -30,7 +34,7 @@ public class Player1 : MonoBehaviour {
 		
 		if (Input.GetKey ("space"))
 		{
-			rb.AddForce(transform.up * thrust);
+			rbp1.AddForce(transform.up * thrust);
 		}
 		
 		//Rotate to mouse
@@ -46,6 +50,8 @@ public class Player1 : MonoBehaviour {
 			shot.GetComponent<Rigidbody2D> ().AddForce (shotPos.up * shotForce);
 
 			nextFire = Time.time + fireRate;
+
+			pew.Play ();
 
 		}
 
