@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player1 : MonoBehaviour {
+
+	public int health;
+	public GameObject deatheffect;
 
 	public float thrust;
 	Rigidbody2D rbp1;
@@ -32,6 +36,7 @@ public class Player1 : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		
+		
 		if (Input.GetKey ("space"))
 		{
 			rbp1.AddForce(transform.up * thrust);
@@ -56,6 +61,19 @@ public class Player1 : MonoBehaviour {
 		}
 
 		ScreenWrap ();
+	}
+	void OnCollisionEnter2D(Collision2D other)
+	{
+			health--;
+
+		if (health <= 0) 
+		{
+
+			Destroy(gameObject);
+
+			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex+1);
+
+		}
 	}
 
 	void ScreenWrap()
@@ -115,4 +133,5 @@ public class Player1 : MonoBehaviour {
 		}
 		return false;
 	}
+		
 }

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 82430933841182428}
   m_Layer: 8
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,6 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963a40aebeef3a0448200c24043ff288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
+  deatheffect: {fileID: 1987281391614488, guid: cfe820b6c169c7547a2837bfe0509623,
+    type: 2}
   thrust: 7
   projectile: {fileID: 1730445401242854, guid: 761cd7309b97a9a4cb4b8f5d03b06b4f, type: 2}
   shotPos: {fileID: 0}

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -11,8 +13,15 @@ public class GameController : MonoBehaviour {
 	public float startWait;
 	public float wavecount;
 
+	public Text scoretext;
+	int score;
+
+
 	// Use this for initialization
 	void Start () {
+		
+		score = 0;
+		Score ();
 
 		StartCoroutine (SpawnWaves ());
 
@@ -20,7 +29,34 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		//increases difficulty over time
+		if (wavecount >= 5) {
+			spawnWait = .8f;
+		}
+		if (wavecount >= 10) {
+			spawnWait = .7f;
+		}
+		if (wavecount >= 15) {
+			spawnWait = .6f;
+		}
+		if (wavecount >= 25) {
+			spawnWait = .5f;
+		}
+		if (wavecount >= 35) {
+			spawnWait = .4f;
+		}
+		if (wavecount >= 50) {
+			spawnWait = .3f;
+		}
+		if (wavecount >= 70) {
+			spawnWait = .2f;
+		}
+		if (wavecount >= 100) {
+			spawnWait = .1f;
+		}
+		if (wavecount >= 150) {
+			spawnWait = .05f;
+		}
 	}
 
 	IEnumerator SpawnWaves()
@@ -42,6 +78,17 @@ public class GameController : MonoBehaviour {
 				wavecount++;
 			}
 		}
+	}
+
+	void Score()
+	{
+		scoretext.text = "Score: " + score;
+	}
+
+	public void AddScore(int newscorevalue)
+	{
+		score += newscorevalue;
+		Score ();
 	}
 
 	void SpawnTop()

@@ -53,6 +53,8 @@
   <ItemGroup>
      <Compile Include="Assets\_Scripts\Asteroid.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
+     <Compile Include="Assets\_Scripts\GunUp.cs" />
+     <Compile Include="Assets\_Scripts\HealthUp.cs" />
      <Compile Include="Assets\_Scripts\LevelManager.cs" />
      <Compile Include="Assets\_Scripts\MusicManager.cs" />
      <Compile Include="Assets\_Scripts\Player1.cs" />
