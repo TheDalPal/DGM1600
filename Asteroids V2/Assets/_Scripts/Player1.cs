@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player1 : MonoBehaviour {
 
 	public int health;
+	public GameObject[] hearts;
+
 	public GameObject deatheffect;
 
 	public float thrust;
@@ -31,6 +34,9 @@ public class Player1 : MonoBehaviour {
 		renderers = GetComponentsInChildren<Renderer> ();
 
 		pew = GetComponent<AudioSource> ();
+
+		HeartDisplay ();
+
 	}
 	
 	// Update is called once per frame
@@ -64,7 +70,9 @@ public class Player1 : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D other)
 	{
-			health--;
+		health--;
+
+		HeartDisplay ();
 
 		if (health <= 0) 
 		{
@@ -75,6 +83,8 @@ public class Player1 : MonoBehaviour {
 
 		}
 	}
+
+
 
 	void ScreenWrap()
 	{
@@ -133,5 +143,17 @@ public class Player1 : MonoBehaviour {
 		}
 		return false;
 	}
-		
+
+	public void HeartDisplay()
+	{	//Turn Hearts off
+		for(int i = 0; i < hearts.Length; i++)
+		{
+			hearts[i].SetActive (false);
+		}
+		//Turn on current amount of health
+		for(int i = 0; i < health; i++)
+		{
+			hearts[i].SetActive (true);
+		}
+	}
 }

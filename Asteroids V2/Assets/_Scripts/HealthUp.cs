@@ -20,6 +20,8 @@ public class HealthUp : MonoBehaviour {
 
 		Player1 stats = player.GetComponent<Player1> ();
 		stats.health++;
+		stats.HeartDisplay ();
+
 
 		Destroy(gameObject);
 	}

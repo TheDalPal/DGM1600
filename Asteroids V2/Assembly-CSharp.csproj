@@ -59,6 +59,7 @@
      <Compile Include="Assets\_Scripts\MusicManager.cs" />
      <Compile Include="Assets\_Scripts\Player1.cs" />
      <Compile Include="Assets\_Scripts\Projectile.cs" />
+     <Compile Include="Assets\_Scripts\SpawnPowerUps.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -7,7 +7,7 @@ public class Asteroid : MonoBehaviour {
 	public float spin;
 	public float lifetime;
 
-	public float thrust;
+	float thrust;
 	float randomRotate = 25;
 
 	private Rigidbody2D rba;
@@ -15,12 +15,15 @@ public class Asteroid : MonoBehaviour {
 	GameController gameController;
 	public int scorevalue;
 
+
 	AudioSource points;
 
 	// Use this for initialization
 	void Start () {
 
 		rba = GetComponent<Rigidbody2D> (); 
+
+		thrust = Random.Range (200, 250);
 
 		//look at center 
 		transform.LookAt (Vector3.zero);
@@ -31,6 +34,7 @@ public class Asteroid : MonoBehaviour {
 		rba.AddForce(transform.up * thrust);
 		
 		rba.AddTorque(Random.Range(-spin,spin),ForceMode2D.Impulse);
+
 
 		//find game controller script
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");

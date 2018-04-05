@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 189
-    y: 67
+    x: 263
+    y: 77
     width: 1593
     height: 981
   m_ShowMode: 4
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 342}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 104
+  controlID: 138
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -390,8 +390,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 520
+    x: 263
+    y: 627
     width: 831
     height: 409
 --- !u!114 &16
@@ -416,13 +416,13 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 835
-    y: 19
+    x: 1098
+    y: 126
     width: 200
     height: 910
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ba070000
+    m_SelectedIDs: b4070000
     m_LastClickedID: 0
     m_ExpandedIDs: a6fbffff00000000
     m_RenameOverlay:
@@ -469,8 +469,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1273
-    y: 19
+    x: 1536
+    y: 126
     width: 320
     height: 910
   m_ScrollPosition: {x: 0, y: 0}
@@ -502,8 +502,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1228
-    y: 116
+    x: 1302
+    y: 126
     width: 230
     height: 910
   m_SearchFilter:
@@ -560,15 +560,15 @@ MonoBehaviour:
     m_ExpandedIDs: 000000003427000068270000a42800001a290000c2290000342a0000482a0000142b0000342b0000c22b0000c82b0000022c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Meteor
-      m_OriginalName: Meteor
+      m_Name: SpaceShip
+      m_OriginalName: SpaceShip
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 1978
+      m_UserData: 11028
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -634,8 +634,8 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 19
+    x: 263
+    y: 126
     width: 831
     height: 480
   m_MaximizeOnPlay: 0
