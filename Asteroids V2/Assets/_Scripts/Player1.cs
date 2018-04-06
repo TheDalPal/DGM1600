@@ -41,6 +41,10 @@ public class Player1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		if (health > 10) {
+			health = 10;
+		}
 		
 		
 		if (Input.GetKey ("space"))
@@ -76,7 +80,6 @@ public class Player1 : MonoBehaviour {
 
 		if (health <= 0) 
 		{
-
 			Destroy(gameObject);
 
 			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex+1);
@@ -156,4 +159,5 @@ public class Player1 : MonoBehaviour {
 			hearts[i].SetActive (true);
 		}
 	}
+		
 }

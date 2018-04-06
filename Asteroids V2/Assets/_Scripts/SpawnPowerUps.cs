@@ -36,15 +36,15 @@ public class SpawnPowerUps : MonoBehaviour {
 	//Find random pos to spawn power up
 	void SpawnPowerUp()
 	{
-		randomvalue = Random.Range (1, 5);
+		randomvalue = Random.Range (1, 10);
 
-		if (randomvalue <= 2) {
+		if (randomvalue <= 3) {
 			Vector3 spawnPowerUp = new Vector3 (Random.Range (-powerupPos.x, powerupPos.x), Random.Range (-powerupPos.y, powerupPos.y), powerupPos.z);
 			Quaternion spawnRotation = Quaternion.identity;
 			Instantiate (healthup, spawnPowerUp, spawnRotation);
 		}
 
-		if (randomvalue >= 3) {
+		if (randomvalue > 3) {
 			Vector3 spawnPowerUp = new Vector3 (Random.Range (-powerupPos.x, powerupPos.x), Random.Range (-powerupPos.y, powerupPos.y), powerupPos.z);
 			Quaternion spawnRotation = Quaternion.identity;
 			Instantiate (gunup, spawnPowerUp, spawnRotation);

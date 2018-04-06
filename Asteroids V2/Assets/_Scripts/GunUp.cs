@@ -8,6 +8,13 @@ public class GunUp : MonoBehaviour {
 	public float multiplier;
 	public float effecttime;
 
+	AudioSource powerup;
+
+	void Start()
+	{
+		powerup = GetComponent<AudioSource> ();
+	}
+
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.CompareTag ("Player"))
@@ -20,6 +27,8 @@ public class GunUp : MonoBehaviour {
 	{
 		Instantiate (effect, transform.position, transform.rotation);
 
+		powerup.Play ();
+
 		Player1 stats = player.GetComponent<Player1> ();
 
 		stats.fireRate *= multiplier;
@@ -30,6 +39,7 @@ public class GunUp : MonoBehaviour {
 		yield return new WaitForSeconds (effecttime);
 
 		stats.fireRate /= multiplier;
+		stats.fireRate -= .01f;
 
 		Destroy(gameObject);
 	}
