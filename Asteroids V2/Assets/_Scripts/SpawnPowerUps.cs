@@ -6,6 +6,7 @@ public class SpawnPowerUps : MonoBehaviour {
 
 	public GameObject healthup;
 	public GameObject gunup;
+	public GameObject invinsibility;
 
 	public Vector3 powerupPos;
 	public float spawntimer;
@@ -38,16 +39,22 @@ public class SpawnPowerUps : MonoBehaviour {
 	{
 		randomvalue = Random.Range (1, 10);
 
-		if (randomvalue <= 3) {
+		if (randomvalue <= 4 && randomvalue > 1) {
 			Vector3 spawnPowerUp = new Vector3 (Random.Range (-powerupPos.x, powerupPos.x), Random.Range (-powerupPos.y, powerupPos.y), powerupPos.z);
 			Quaternion spawnRotation = Quaternion.identity;
 			Instantiate (healthup, spawnPowerUp, spawnRotation);
 		}
 
-		if (randomvalue > 3) {
+		if (randomvalue > 4) {
 			Vector3 spawnPowerUp = new Vector3 (Random.Range (-powerupPos.x, powerupPos.x), Random.Range (-powerupPos.y, powerupPos.y), powerupPos.z);
 			Quaternion spawnRotation = Quaternion.identity;
 			Instantiate (gunup, spawnPowerUp, spawnRotation);
+		}
+
+		if (randomvalue == 1) {
+			Vector3 spawnPowerUp = new Vector3 (Random.Range (-powerupPos.x, powerupPos.x), Random.Range (-powerupPos.y, powerupPos.y), powerupPos.z);
+			Quaternion spawnRotation = Quaternion.identity;
+			Instantiate (invinsibility, spawnPowerUp, spawnRotation);
 		}
 	}
 }

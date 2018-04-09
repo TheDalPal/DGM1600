@@ -39,7 +39,7 @@ public class GunUp : MonoBehaviour {
 		yield return new WaitForSeconds (effecttime);
 
 		stats.fireRate /= multiplier;
-		stats.fireRate -= .01f;
+		//stats.fireRate -= .01f;
 
 		Destroy(gameObject);
 	}

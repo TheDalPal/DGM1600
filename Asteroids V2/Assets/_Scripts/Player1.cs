@@ -26,6 +26,8 @@ public class Player1 : MonoBehaviour {
 
 	AudioSource pew;
 
+	public bool invinsibility;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -74,16 +76,17 @@ public class Player1 : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		health--;
+		if (invinsibility == false) {
+			health--;
 
-		HeartDisplay ();
+			HeartDisplay ();
 
-		if (health <= 0) 
-		{
-			Destroy(gameObject);
+			if (health <= 0) {
+				Destroy (gameObject);
 
-			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex+1);
+				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 
+			}
 		}
 	}
 
