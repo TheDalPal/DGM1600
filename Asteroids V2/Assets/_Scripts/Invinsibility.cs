@@ -7,6 +7,8 @@ public class Invinsibility : MonoBehaviour {
 	public GameObject effect;
 
 	public float effecttime;
+	public float timer;
+	private bool pickedup = false;
 
 	AudioSource powerup;
 	AudioSource powerdown;
@@ -16,6 +18,15 @@ public class Invinsibility : MonoBehaviour {
 		AudioSource[] audios = GetComponents<AudioSource> ();
 		powerup = audios [0];
 		powerdown = audios[1];
+	}
+
+	void Update()
+	{
+		timer -= Time.deltaTime;
+
+		if (timer <= 0 && pickedup == false) {
+			Destroy (gameObject);
+		}
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -28,6 +39,8 @@ public class Invinsibility : MonoBehaviour {
 
 	IEnumerator Pickup (Collider2D player)
 	{
+		pickedup = true;
+
 		Instantiate (effect, transform.position, transform.rotation);
 
 		powerup.Play ();

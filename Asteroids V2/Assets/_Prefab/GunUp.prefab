@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 61600712769774162}
   - component: {fileID: 114792200773350842}
   - component: {fileID: 82590920808330580}
-  - component: {fileID: 114493392300853924}
   m_Layer: 0
   m_Name: GunUp
   m_TagString: Untagged
@@ -149,18 +148,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114493392300853924
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1450157883706736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 464be0782c783fb49a2f83e26997e5d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: 10
 --- !u!114 &114792200773350842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,6 +162,7 @@ MonoBehaviour:
   effect: {fileID: 1987281391614488, guid: cfe820b6c169c7547a2837bfe0509623, type: 2}
   multiplier: 0.25
   effecttime: 3
+  timer: 5
 --- !u!212 &212439188806265582
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect: {fileID: 1987281391614488, guid: cfe820b6c169c7547a2837bfe0509623, type: 2}
   effecttime: 5
+  timer: 10
 --- !u!212 &212862610277628344
 SpriteRenderer:
   m_ObjectHideFlags: 1

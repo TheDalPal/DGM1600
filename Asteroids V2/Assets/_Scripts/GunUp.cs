@@ -7,6 +7,8 @@ public class GunUp : MonoBehaviour {
 	public GameObject effect;
 	public float multiplier;
 	public float effecttime;
+	public float timer;
+	private bool pickedup = false;
 
 	AudioSource powerup;
 
@@ -15,8 +17,18 @@ public class GunUp : MonoBehaviour {
 		powerup = GetComponent<AudioSource> ();
 	}
 
+	void Update()
+	{
+		timer -= Time.deltaTime;
+
+		if (timer <= 0 && pickedup == false) {
+			Destroy (gameObject);
+		}
+	}
+
 	void OnTriggerEnter2D (Collider2D other)
 	{
+
 		if (other.CompareTag ("Player"))
 		{
 			StartCoroutine ( Pickup (other) );
@@ -25,6 +37,9 @@ public class GunUp : MonoBehaviour {
 
 	IEnumerator Pickup (Collider2D player)
 	{
+
+		pickedup = true;
+
 		Instantiate (effect, transform.position, transform.rotation);
 
 		powerup.Play ();
