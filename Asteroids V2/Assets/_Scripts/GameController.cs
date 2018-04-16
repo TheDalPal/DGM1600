@@ -13,7 +13,14 @@ public class GameController : MonoBehaviour {
 	public float startWait;
 	public int wavecount;
 
+	public bool inGame = true;
+
 	public Text scoretext;
+	public Text gameovertext;
+	public Text finalscoretext;
+	public Button restartbutton;
+	public Button quitbutton;
+
 	int score;
 
 
@@ -22,6 +29,11 @@ public class GameController : MonoBehaviour {
 		
 		score = 0;
 		Score ();
+
+		gameovertext.text = "";
+		finalscoretext.text = "";
+		restartbutton.gameObject.SetActive (false);
+		quitbutton.gameObject.SetActive (false);
 
 		StartCoroutine (SpawnWaves ());
 
@@ -58,13 +70,23 @@ public class GameController : MonoBehaviour {
 			if (wavecount >= 150) {
 				spawnWait = .05f;
 			}
+
+		if (inGame == false) {
+			
+			scoretext.text = "";
+			gameovertext.text = "Game Over";
+			finalscoretext.text = "Your Score Was: " + score;
+			restartbutton.gameObject.SetActive (true);
+			quitbutton.gameObject.SetActive (true);
+			StopAllCoroutines ();
+		}
 	}
 
 
 	IEnumerator SpawnWaves()
 	{
 		yield return new WaitForSeconds (startWait);
-		while (true) {
+		while (inGame) {
 			for (int i = 0; i < hazardCount; i++) {
 				SpawnTop ();
 				yield return new WaitForSeconds (spawnWait);

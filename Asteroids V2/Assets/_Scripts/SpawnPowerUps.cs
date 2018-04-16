@@ -12,6 +12,8 @@ public class SpawnPowerUps : MonoBehaviour {
 	public float spawntimer;
 	public float spawntimersave;
 
+	bool gamestatus;
+
 	int randomvalue;
 
 
@@ -20,17 +22,24 @@ public class SpawnPowerUps : MonoBehaviour {
 		
 		spawntimersave = spawntimer;
 
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+		gamestatus = GameObject.Find ("GameController").GetComponent<GameController> ().inGame;
 
-		spawntimer -= Time.deltaTime;
+		if (gamestatus) 
+		{
+			spawntimer -= Time.deltaTime;
 
-		// timer reaches 0 spawn the power up
-		if (spawntimer <= 0) {
-			SpawnPowerUp ();
-			spawntimer = spawntimersave;
+			// timer reaches 0 spawn the power up
+			if (spawntimer <= 0) 
+			{
+				SpawnPowerUp ();
+				spawntimer = spawntimersave;
+			}
 		}
 	}
 

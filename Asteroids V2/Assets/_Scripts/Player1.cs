@@ -84,7 +84,7 @@ public class Player1 : MonoBehaviour {
 			if (health <= 0) {
 				Destroy (gameObject);
 
-				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+				GameObject.Find ("GameController").GetComponent<GameController> ().inGame = false;
 
 			}
 		}
